@@ -44,3 +44,8 @@ function init($title, $content, id) {
     }))
 
 }
+
+
+// Активация табов 
+$tab('tabs', 'top')
+
