@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+## Небольшая бибиотека Tabs
 
-You can use the [editor on GitHub](https://github.com/diller0054/tabs/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Максимально простая функция табов, в данном случаи добавлены небольшие стили которое вы можете переписать при своем желании. На данный момент присудствуют 4 вида табов, top, right, bottom, left. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Структура html
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Небольшой пример html кода. У вас всегда должна быть одна общая обертка в которой должен быть указан любой id для вызывания самой функции. К кнопкам табов должен находиться class "tab_title", у самого блока с контентом "tab_content"
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+<div class="tabs" id="tabs>
+  <div class="head_tabs">
+    <div class="tab_title active">Tab 1</div>
+    <div class="tab_title">Tab 2</div>
+    <div class="tab_title">Tab 3</div>
+    <div class="tab_title">Tab 4</div>
+  </div>
+  <div class="body_tabs">
+    <div class="tab_content active">
+      <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+    </div>
+    <div class="tab_content">
+      <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+    </div>
+    <div class="tab_content">
+      <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+    </div>
+    <div class="tab_content>
+      <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+    </div>
+  </div>
+</div>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Активация tabs
 
-### Jekyll Themes
+Сама активация простая, вам нужно прописать ключевое слово $tab(id, type)
+id = id блока в котором находиться tab
+type = их 4 top, right, left, bottom
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/diller0054/tabs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```markdown
+$tab('tabs', 'top')
+```
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+*Чтобы табы работали должно присудствовать как и js, так и css, лишнее можете смело убирать 
